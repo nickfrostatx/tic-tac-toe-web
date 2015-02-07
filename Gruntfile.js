@@ -51,13 +51,37 @@ module.exports = function(grunt) {
         tasks: ['uglify'],
       },
     },
+    zopfli: {
+      main: {
+        options: {
+          numiterations: 1000,
+        },
+        files: [
+          {
+            filter: 'isFile',
+            src: ['static/index.html'],
+            dest: 'static/index.html.gz',
+          },
+          {
+            src: ['static/css/main.min.css'],
+            dest: 'static/css/main.min.css.gz',
+          },
+          {
+            src: ['static/js/main.min.js'],
+            dest: 'static/js/main.min.js.gz',
+          },
+        ],
+      },
+    },
   });
 
   grunt.loadNpmTasks('grunt-contrib-htmlmin');
   grunt.loadNpmTasks('grunt-contrib-sass');
   grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-contrib-watch');
+  grunt.loadNpmTasks('grunt-contrib-zopfli');
 
   grunt.registerTask('default', ['htmlmin', 'sass', 'uglify']);
   grunt.registerTask('dev', ['default', 'watch']);
+  grunt.registerTask('production', ['default', 'zopfli']);
 };
