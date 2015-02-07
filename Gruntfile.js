@@ -9,6 +9,7 @@ module.exports = function(grunt) {
         },
         files: {
           'static/index.html': 'assets/html/index.html',
+          'static/app.html': 'assets/html/app.html',
         },
       },
     },
@@ -58,9 +59,12 @@ module.exports = function(grunt) {
         },
         files: [
           {
-            filter: 'isFile',
             src: ['static/index.html'],
             dest: 'static/index.html.gz',
+          },
+          {
+            src: ['static/app.html'],
+            dest: 'static/app.html.gz',
           },
           {
             src: ['static/css/main.min.css'],

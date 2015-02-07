@@ -1,0 +1,97 @@
+@import 'mixins';
+
+.home {
+    font-family: GillSans;
+}
+
+.home h1, .home h2 {
+    color: #ccc;
+    font-weight: normal;
+    text-align: center;
+}
+
+.home h1 {
+    margin-top: 72px;
+    font-size: 60px;
+}
+
+.home h2 {
+    font-size: 24px;
+}
+
+.home h2 a {
+    color: #666;
+    text-decoration: none;
+}
+
+.home h2 a:hover {
+    color: #000;
+}
+
+.description {
+    max-width: 480px;
+    margin: 0 auto;
+    padding: 36px 18px;
+    color: #888;
+    font-size: 16px;
+    line-height: 31px;
+    text-align: justify;
+}
+
+.description a {
+    color: #666;
+}
+
+.description a:hover {
+    color: #000;
+}
+
+.play-link, .download-link {
+    display: block;
+    height: 52px;
+    margin: 24px auto;
+    padding: 8px 0 0 12px;
+    width: 287px;
+    @include border-radius(16px);
+    color: #fff;
+    font-size: 19px;
+    text-decoration: none;
+    @include transition(background-color 0.4s ease);
+}
+
+.play-link {
+    background-color: #1abc9c;
+}
+
+.play-link:hover {
+    background-color: #16a085;
+}
+
+.download-link {
+    background-color: #ccc;
+}
+
+.download-link:hover {
+    background-color: #bbb;
+}
+
+.link-icon {
+    height: 43px;
+    width: 43px;
+    fill: #fff;
+    vertical-align: middle;
+}
+
+@media only screen and (min-width: 400px) {
+    .home h1 {
+        font-size: 72px;
+    }
+
+    .home h2 {
+        font-size: 29px;
+    }
+
+    .description {
+        font-size: 19px;
+    }
+}

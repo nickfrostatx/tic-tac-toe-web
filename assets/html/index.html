@@ -4,26 +4,25 @@
     <meta charset="utf-8">
     <title>Tic Tac Toe</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-    <meta name="apple-mobile-web-app-capable" content="yes">
     <link rel="stylesheet" href="css/main.min.css">
   </head>
-  <body>
-    <div class="board turn">
-      <div class="whichturn waiting">Waiting for opponent</div>
-      <div class="space empty"></div>
-      <div class="space empty"></div>
-      <div class="space empty"></div>
-      <div class="space empty"></div>
-      <div class="space empty"></div>
-      <div class="space empty"></div>
-      <div class="space empty"></div>
-      <div class="space empty"></div>
-      <div class="space empty"></div>
+  <body class="home">
+    <h1>Tic-Tac-Toe</h1>
+    <h2>written by <a href="https://nfrost.me/">Nick Frost</a></h2>
+    <div class="description">
+      <p>I wrote this tic-tac-toe game for my CPE 102 class at Cal Poly. There are two clients, written in Java and HTML5, and a server, built with Node.js. The source code for each of these three parts is on <a href="https://github.com/nickfrostatx?tab=repositories">GitHub</a>.</p>
     </div>
-    <div class="link">
-      <a href="https://github.com/nickfrostatx/tic-tac-toe-web">Source code</a>
-    </div>
-    <script src="https://cdn.socket.io/socket.io-1.3.3.js"></script>
-    <script src="js/main.min.js"></script>
+    <a href="app.html" class="play-link">
+      <svg class="link-icon" viewbox="0 0 512 512">
+        <polygon points="142.332,104.886 197.48,50 402.5,256 197.48,462 142.332,407.113 292.727,256" />
+      </svg>
+      Play Tic-Tac-Toe
+    </a>
+    <a href="#" class="download-link">
+      <svg class="link-icon" viewbox="0 0 512 512">
+        <path d="M438.279,279.407L255.998,462L73.721,279.407h83.825v-68.379h196.906v68.379H438.279zM157.546,180.028h196.906v-56H157.546V180.028z M354.452,95.028V50H157.546v45.028H354.452z" />
+      </svg>
+      Download client.jar (8.7 kB)
+    </a>
   </body>
 </html>
