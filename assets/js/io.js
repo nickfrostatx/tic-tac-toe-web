@@ -1,7 +1,7 @@
 var Socket = function() {};
 
 Socket.prototype.connect = function() {
-  this.sock = io.connect('http://localhost:3001');
+  this.sock = io.connect('https://nfrost.me');
 
   this.sock.on('newgame', function(turn) {
     game.start(turn);
