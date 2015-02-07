@@ -1,0 +1,67 @@
+@import 'mixins';
+
+.board {
+    margin: 10px auto;
+    width: 300px;
+}
+
+.whichturn {
+    width: 150px;
+    margin: 10px auto 10px auto;
+    padding: 8px 5px 5px 5px;
+    @include border-radius(8px);
+    color: #fff;
+    font-family: sans-serif;
+    text-align: center;
+}
+
+.whichturn.waiting {
+    background-color: #BDC3C7;
+}
+
+.whichturn.me-turn {
+    background-color: #1ABC9C;
+}
+
+.whichturn.opponent-turn {
+    background-color: #E74C3C;
+}
+
+.space {
+    display: inline-block;
+    width: 92px;
+    height: 92px;
+    margin: 4px;
+    vertical-align: top;
+    @include border-radius(6px);
+    @include transition(background-color 0.2s ease);
+}
+
+.space.empty {
+    background-color: #ECF0F1;
+}
+
+.board.turn .space.empty:hover {
+    background-color: #BDC3C7;
+    cursor: pointer;
+}
+
+.space.winner {
+    @include transition(background-color 0.3s ease);
+}
+
+.me {
+    background-color: #1ABC9C;
+}
+
+.me.win {
+    background-color: #138E76;
+}
+
+.opponent {
+    background-color: #E74C3C;
+}
+
+.opponent.win {
+    background-color: #C0392B;
+}
