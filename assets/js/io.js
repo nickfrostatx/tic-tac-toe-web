@@ -14,6 +14,14 @@ Socket.prototype.connect = function() {
   this.sock.on('move', function(space) {
     game.move(2, space);
   });
+
+  this.sock.on('win', function(winners) {
+    game.setWinners(1, winners);
+  });
+
+  this.sock.on('loss', function(winners) {
+    game.setWinners(2, winners);
+  });
 };
 
 Socket.prototype.move = function(index) {

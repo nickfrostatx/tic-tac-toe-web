@@ -26,8 +26,12 @@ Space.prototype.setValue = function(value) {
   };
 };
 
-Space.prototype.setWin = function() {
-  
+Space.prototype.setWin = function(win) {
+  if (win) {
+    this.elem.classList.add('win');
+  } else {
+    this.elem.classList.remove('win');
+  };
 };
 
 Space.prototype.click = function() {

@@ -39,6 +39,7 @@ Game.prototype.start = function(turn) {
 Game.prototype.stop = function() {
   forEach(this.spaces, function(space) {
     space.setValue(0);
+    space.setWin(false);
   });
   this.setTurn(0, 'Waiting for opponent', 'waiting');
 };
@@ -55,6 +56,19 @@ Game.prototype.move = function(player, space) {
   } else {
     this.setTurn(1, 'Your turn', 'me-turn');
   };
+};
+
+Game.prototype.setWinners = function(player, winners) {
+  var that = this;
+  if (player == 1) {
+    this.setTurn(0, 'You won!', 'me-turn');
+  } else {
+    this.setTurn(0, 'Opponent won', 'opponent-turn');
+  };
+  forEach(winners, function(space) {
+    that.spaces[space].setValue(player);
+    that.spaces[space].setWin(true);
+  });
 };
 
 var game = new Game();
