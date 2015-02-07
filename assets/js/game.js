@@ -29,6 +29,7 @@ Game.prototype.setTurn = function(turn, msg, cls) {
 };
 
 Game.prototype.start = function(turn) {
+  this.reset();
   if (turn == 1) {
     this.setTurn(1, 'Your turn', 'me-turn');
   } else {
@@ -37,11 +38,15 @@ Game.prototype.start = function(turn) {
 };
 
 Game.prototype.stop = function() {
+  this.reset();
+  this.setTurn(0, 'Waiting for opponent', 'waiting');
+};
+
+Game.prototype.reset = function() {
   forEach(this.spaces, function(space) {
     space.setValue(0);
     space.setWin(false);
   });
-  this.setTurn(0, 'Waiting for opponent', 'waiting');
 };
 
 Game.prototype.click = function(space) {
