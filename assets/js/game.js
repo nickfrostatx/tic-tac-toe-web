@@ -76,4 +76,8 @@ Game.prototype.setWinners = function(player, winners) {
   });
 };
 
+Game.prototype.setDraw = function() {
+  this.setTurn(0, 'It\'s a draw', 'waiting');
+};
+
 var game = new Game();
