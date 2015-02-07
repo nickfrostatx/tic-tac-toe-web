@@ -63,7 +63,7 @@ Game.prototype.setWinners = function(player, winners) {
   if (player == 1) {
     this.setTurn(0, 'You won!', 'me-turn');
   } else {
-    this.setTurn(0, 'Opponent won', 'opponent-turn');
+    this.setTurn(0, 'You lost', 'opponent-turn');
   };
   forEach(winners, function(space) {
     that.spaces[space].setValue(player);
