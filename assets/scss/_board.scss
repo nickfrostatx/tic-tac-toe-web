@@ -6,12 +6,13 @@
 }
 
 .whichturn {
-    width: 180px;
-    margin: 10px auto 10px auto;
-    padding: 8px 5px 5px 5px;
+    width: 190px;
+    margin: 10px auto;
+    padding-top: 4px;
     @include border-radius(8px);
     color: #fff;
     font-family: sans-serif;
+    line-height: 25px;
     text-align: center;
 }
 
